@@ -87,7 +87,7 @@ ggplot(df_Cyclistic,aes(x=day_of_week, fill=member_type))+geom_bar(stat="count",
 ggplot(df_Cyclistic,aes(x=day_of_week, y=length_of_ride, fill=member_type))+
   geom_bar(stat="summary", position = 'dodge')+
   geom_text(aes(y = stage(length_of_ride, after_stat = y), label = round(after_stat(y),1)),stat="summary", size =3,vjust = -0.3, position = position_dodge(.9))+
-  labs(title='Average Length of Rides based on the Day of The Week', x='Month', y='Number Of Rides', fill = 'Member Type')
+  labs(title='Average Length of Rides based on the Day of The Week', x='Month', y='Avg. Ride Length', fill = 'Member Type')
 
 #Plots to show count of bike rides based on member_type on a monthly basis
 ggplot(df_Cyclistic,aes(x=factor(month, level=c('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')), fill=member_type))+
@@ -99,7 +99,7 @@ ggplot(df_Cyclistic,aes(x=factor(month, level=c('Jan', 'Feb', 'Mar', 'Apr', 'May
 ggplot(df_Cyclistic,aes(x=factor(month, level=c('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')), y=length_of_ride, fill=member_type))+
   geom_bar(stat="summary", position = 'dodge')+
   geom_text(aes(y = stage(length_of_ride, after_stat = y), label = round(after_stat(y),1)),stat="summary", size =4,vjust = -0.3, position = position_dodge(.9))+
-  labs(title='Average Length of Rides based on the Month', x='Month', y='Number Of Rides', fill = 'Member Type')
+  labs(title='Average Length of Rides based on the Month', x='Month', y='Avg. Ride Length', fill = 'Member Type')
 
 #Plots to show count of bike rides based on member_type on a Yearly basis
 ggplot(df_Cyclistic,aes(x=year, fill=member_type))+geom_bar(stat="count", position = 'dodge')+
